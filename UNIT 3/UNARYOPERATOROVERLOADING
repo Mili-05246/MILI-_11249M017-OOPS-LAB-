@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+class Temperature {
+    float celsius;
+
+public:
+    // Function to take input
+    void getData() {
+        cout << "Enter temperature in Celsius: ";
+        cin >> celsius;
+    }
+
+    // Overloading the unary minus operator
+    void operator-() {
+        float fahrenheit = (celsius * 9 / 5) + 32;
+        cout << "Temperature in Fahrenheit: " << fahrenheit << endl;
+    }
+};
+
+int main() {
+    Temperature t;
+    t.getData();
+    -t;  // Calls overloaded operator-()
+    return 0;
+}
